@@ -1,0 +1,80 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+{%  include 'status.html' %}
+
+<style>
+    .sort-indicator-contactlist::after {
+        content: ' ▼';
+        font-size: 0.8em;
+        color: #007bff;
+    }
+
+        .sort-indicator-todolist::after {
+        content: ' ▼';
+        font-size: 0.8em;
+        color: #007bff;
+    }
+</style>
+
+<br>
+
+<div class="row">
+	<div class="col-md-8">
+		<h5>TODO LIST:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Create Todo</a>
+			<table class="table table-sm">
+				<tr>
+					<th><a href="?sort=todo_item" class="{% if current_sort == 'todo_item' %}sort-indicator-todolist{% endif %}">Todo Item</a></th>
+					<th><a href="?sort=remark" class="{% if current_sort == 'remark' %}sort-indicator-todolist{% endif %}">Role</a></th>
+					<th><a href="?sort=unit" class="{% if current_sort == 'unit' %}sort-indicator-todolist{% endif %}">Unit</a></th>
+					<th><a href="?sort=category" class="{% if current_sort == 'category' %}sort-indicator-todolist{% endif %}">Category</a></th>
+					<th><a href="?sort=status" class="{% if current_sort == 'status' %}sort-indicator-todolist{% endif %}">Status</a></th>
+					<th>Update</th>
+					<th>Delete</th>
+
+				</tr>
+				{% for m in todo_list %}
+					<tr>
+						<td>{{m.todo_item}}</td>
+						<td>{{m.remark}}</td>
+						<td>{{m.unit}}</td>
+						<td>{{m.category}}</td>
+						<td>{{m.status}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<h5>CONTACT LISTS:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Create Contact</a>
+			<table class="table table-sm">
+				<tr>
+					<th><a href="?sort=name" class="{% if current_sort == 'name' %}sort-indicator-contactlist{% endif %}">Name</a></th>
+					<th><a href="?sort=role" class="{% if current_sort == 'role' %}sort-indicator-contactlist{% endif %}">Role</a></th>
+					<th><a href="?sort=building" class="{% if current_sort == 'building' %}sort-indicator-contactlist{% endif %}">Building</a></th>
+					<th><a href="?sort=phone" class="{% if current_sort == 'phone' %}sort-indicator-contactlist{% endif %}">Phone</a></th>
+				</tr>
+				{% for n in contact_list %}
+					<tr>
+						<td>{{n.name}}</td>
+						<td>{{n.role}}</td>
+						<td>{{n.building}}</td>
+						<td>{{n.phone}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
+

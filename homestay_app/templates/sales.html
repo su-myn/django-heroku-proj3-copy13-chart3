@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<h1>Monthly Sales Chart</h1>
+<div class="chart-container">
+    <div class="chart-wrapper">
+        <h2>Line Chart</h2>
+        <div class="ct-chart ct-perfect-fourth" id="chart1"></div>
+    </div>
+    <div class="chart-wrapper">
+        <h2>Bar Chart</h2>
+        <div class="ct-chart ct-perfect-fourth" id="chart2"></div>
+    </div>
+</div>
+
+<style>
+    .chart-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .chart-wrapper {
+        width: 48%;
+    }
+    .ct-chart {
+        height: 300px;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css">
+<script>
+
+// Line Chart
+new Chartist.Line('#chart1', {
+  labels: {{ labels|safe }},
+  series: [{{ series|safe }}]
+}, {
+  low: 0,
+  showArea: true
+
+});
+
+// Bar Chart
+new Chartist.Bar('#chart2', {
+  labels: {{ labels|safe }},
+  series: [{{ series|safe }}]
+}, {
+  low: 0,
+  showArea: true
+});
+
+
+</script>
+{% endblock %}

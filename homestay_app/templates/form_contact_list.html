@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <h1 class="mt-4 mb-4">{% if contact_item %}Update{% else %}Add{% endif %} Contact Item</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group mb-4">
+                <label for="name">name:</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group mb-4">
+                <label for="role">role:</label>
+                {{ form.role }}
+            </div>
+            <div class="form-group mb-4">
+                <label for="building">building:</label>
+                {{ form.building }}
+            </div>
+            <div class="form-group mb-4">
+                <label for="phone">phone:</label>
+                {{ form.phone }}
+            </div>
+            <div class="form-group mb-4">
+                <label for="remark">remark:</label>
+                {{ form.remark }}
+            </div>
+            <div class="form-group mb-4">
+                <label for="tags">tags:</label>
+                {{ form.tags }}
+            </div>
+
+            <button class="btn btn-secondary mb-4" type="submit">Submit</button>
+            {% if messages %}
+            <div class="alert alert-success">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

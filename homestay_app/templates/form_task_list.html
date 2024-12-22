@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="post">
+	<h1 class="mt-4 mb-4">{% if task_item %}Update{% else %}Add{% endif %} Task Item</h1>
+	{% csrf_token %}
+	<div class="form-group mb-4">
+		{{form}}
+		<input class="form-control" type="submit">
+	</div>
+
+{% endblock %}

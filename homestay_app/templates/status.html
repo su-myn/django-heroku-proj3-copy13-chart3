@@ -1,0 +1,125 @@
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+					<h5 class="card-title">Complain</h5>
+			  	</div>
+			  	<div class="card-body">
+					 <a href="{% url 'complainList' %}">
+						 <h3 class="card-title">{{complain_list.count}}</h3>
+					 </a>
+			  	</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Repair</h5>
+			  	</div>
+			  	<div class="card-body">
+					<a href="{% url 'repairList' %}">
+			    		<h3 class="card-title">{{repair_list.count}}</h3>
+					</a>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Replace</h5>
+			  	</div>
+			  	<div class="card-body">
+					<a href="{% url 'replaceList' %}">
+			    		<h3 class="card-title">{{replace_list.count}}</h3>
+					</a>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Aircond</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">NIL</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Refill</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">NIL</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--2nd row-->
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-deliveredddd">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Todo List</h5>
+			  	</div>
+			  	<div class="card-body">
+					<a href="{% url 'todoList' %}">
+			    		<h3 class="card-title">{{todo_list.count}}</h3>
+					</a>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-deliveredd">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Contact List</h5>
+			  	</div>
+			  	<div class="card-body">
+					 <a href="{% url 'contactList' %}">
+
+						 <h3 class="card-title">{{contact_list.count}}</h3>
+					 </a>
+			  	</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivereddd">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Monthly Income</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 id="nil-2" class="card-title"><a href="{% url 'sales_chart' %}">View Sales Chart</a></h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
